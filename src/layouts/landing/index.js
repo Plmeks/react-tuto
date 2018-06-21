@@ -7,31 +7,14 @@ import Navigation from "../../components/navigation/";
 import Footer from "../../components/footer/";
 
 class Landing extends Component {
-    state = {
-        meta: null
-    };
-    
-    changeMeta = ({meta, links, scripts}) => {
-        this.setState({
-            meta,
-            links,
-            scripts
-        });
-    }
-
     render() {
-        let {meta, links, scripts} = this.state;
         return(
             <React.Fragment>
-                <Head>
-                    {meta}
-                    {links}
-                </Head>
+                <Head />
                 <Body>
                     <Navigation />
-                    <Router changeMeta={this.changeMeta}/>
+                    <Router />
                     <Footer />
-                    {scripts}
                 </Body>
             </React.Fragment>
         );

@@ -1,13 +1,10 @@
 import React, { Component } from 'react';
-import Meta from './meta';
+
+const meta = {
+  title: "About"
+};
 
 class About extends Component {
-  componentDidMount() {
-    this.props.changeMeta({
-      meta: <Meta />
-    })
-  }
-
   render() {
     return (
       <React.Fragment>

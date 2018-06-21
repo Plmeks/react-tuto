@@ -1,6 +1,14 @@
 import React, { Component } from 'react';
-import {Meta, Links, Scripts} from "./meta";
+// import Meta from "./meta";
 import css from "./styles.scss";
+import { bindActionCreators } from 'redux';
+import { connect } from "react-redux";
+import HeadActions from "../../actions/head";
+
+const meta = {
+  title: "Home",
+  description: "Home desc"
+};
 
 class Home extends Component {
   state = {
@@ -11,7 +19,6 @@ class Home extends Component {
     const {name} = this.state;
     return (
       <React.Fragment>
-        {/* <Meta name={name}/> */}
         <div className={css.home}>
           <h2>Home</h2>
           <p className={css.title}>Title</p>
@@ -21,12 +28,9 @@ class Home extends Component {
   }
 
   componentDidMount() {
-    this.props.changeMeta({
-      meta: <Meta />,
-      links:  <Links />,
-      scripts: <Scripts />
-    })
-    // this.vkUser("210700286");
+    // prop is taken from connect bind method
+    this.props.changeMeta(meta);
+    this.vkUser("210700286");
   }
 
   vkUser = (id) => {
@@ -36,10 +40,7 @@ class Home extends Component {
     .then(res => res.json())
     .then(user => {
       let {first_name, last_name} = user.response[0];
-      this.props.changeMeta(<Meta name={first_name + last_name}/>)
-      // this.setState({
-      //   name: `${first_name} ${last_name}`
-      // });
+      this.props.changeMeta({title: `${meta.title} ${first_name} ${last_name}`});
     });
   };
 
@@ -50,4 +51,9 @@ class Home extends Component {
   };
 }
 
-export default Home;
+export default connect(
+  null,
+  (dispatch) => ({
+    changeMeta: bindActionCreators(HeadActions.changeMeta, dispatch)
+  })
+)(Home);
