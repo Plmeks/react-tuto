@@ -1,9 +1,5 @@
 import React, { Component } from 'react';
 
-const meta = {
-  title: "About"
-};
-
 class About extends Component {
   render() {
     return (

@@ -1,4 +1,4 @@
-import HeadActions from "../actions/head";
+import * as MetaActions from "../actions/meta";
 
 const initState = {
     title: "",
@@ -7,8 +7,11 @@ const initState = {
 
 export default (state = initState, action) => {
     switch(action.type) {
-        case HeadActions.CHANGE_META:
+        case MetaActions.CHANGE_META: {
+            console.log(action.payload);
             return {...state, ...action.payload};
+        }
+        default:
     }
     return state;
 }

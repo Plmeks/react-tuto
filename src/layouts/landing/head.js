@@ -1,10 +1,9 @@
 import React from "react";
-import {bindActionCreators} from "redux";
 import {connect} from "react-redux";
 
  class Head extends React.Component {
      render() {
-         const {title, description} = this.props.HeadReducer;
+         const {title, description} = this.props.MetaReducer;
          return(
             <head>
                 <meta charSet="utf-8" />
