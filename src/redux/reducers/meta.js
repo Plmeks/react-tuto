@@ -8,7 +8,6 @@ const initState = {
 export default (state = initState, action) => {
     switch(action.type) {
         case MetaActions.CHANGE_META: {
-            console.log(action.payload);
             return {...state, ...action.payload};
         }
         default:
