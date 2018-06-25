@@ -21,7 +21,6 @@ class Landing extends Component {
                     <Route path={path} exact component={Home}/>
                     <Route path={`${path}/index`} exact component={Home}/>
                     <Route path={`${path}/about`} exact component={About}/>
-                    <Route path="*" component={Home} />
                     <Footer />
                 </Body>
             </React.Fragment>
