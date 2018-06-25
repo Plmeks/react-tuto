@@ -1,6 +1,6 @@
 export const meta  = {
-  title: "Home",
-  description: "Home desc"
+  title: "About",
+  description: "About desc"
 };
 
 export const scripts = {};

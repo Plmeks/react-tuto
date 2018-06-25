@@ -1,3 +1,10 @@
+export const CHANGE_META = "CHANGE_META";
+
+export const changeMeta = (payload) => ({
+    type: CHANGE_META,
+    payload
+});
+
 const vk = {
     proxy: "https://cors-anywhere.herokuapp.com/",
     token: "a24e6f1ce4a82c65c78bae357b82698b042d163541bb886c12cf6d5ad024bf1c14f32925af148ad0edcad",
@@ -16,9 +23,7 @@ const vkUser = (id) => {
     })
 };
 
-export const CHANGE_META = "CHANGE_META";
-
-export const changeMeta = (payload) => {
+export const oldChangeMeta = (payload) => {
     return (dispatch) => {
         vkUser("1")
         .then(user => {

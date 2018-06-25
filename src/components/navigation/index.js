@@ -6,7 +6,7 @@ export default () => (
       <a href="/">Home</a>
     </li>
     <li>
-      <a href="about">About</a>
+      <a href="/home/about">About</a>
     </li>
     <li>
       <a href="contacts">Contacts</a>
